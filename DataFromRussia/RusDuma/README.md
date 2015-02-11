@@ -9,14 +9,14 @@ The column names are:
 * Name - the name of the deputat
 * Fraction - the name of fraction
 * Links to votes -  results of deputats voting for every vote
-###Name
+Name
 It's of course in russian
-###Fraction
+Fraction
 * EDRO - United Russia
 * KPRF - The Communist Party of the Russian Federation (yes, we still have it :) )
 * LDPR - Liberal Democratic Party of the Russian Federation
 * SR - Fair Russia
-###The results of the votes
+The results of the votes
 * -1 - negative vote
 * 0 - abstained
 * 1 - positive vote
