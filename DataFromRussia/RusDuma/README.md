@@ -46,6 +46,7 @@ The functions are:
 
 Input: 
 FractionName, data from VoteRes.txt
+
 Output: 
 True - false vector shows if the deputat is in fraction
 
@@ -53,6 +54,7 @@ True - false vector shows if the deputat is in fraction
 
 Input: 
 FractionName, data from VoteRes.txt
+
 Output: 
 Information about voting of the deputats from given fraction
 
@@ -60,6 +62,7 @@ Information about voting of the deputats from given fraction
 
 Input: 
 FractionName, data from VoteRes.txt
+
 Output: 
 Average deputat by fraction - the deputat who votes:
 * positive (1) if majority of his fraction votes positive
@@ -71,6 +74,7 @@ Average deputat by fraction - the deputat who votes:
 
 Input: 
 Deputat id, data from VoteRes.txt
+
 Output: 
 Information about voting of the deputat with given id
 
@@ -78,5 +82,6 @@ Information about voting of the deputat with given id
 
 Input: 
 Information about voting of the deputat1 and deputat2
+
 Output: 
 The similarity of Deputats (proportion of similar votes)
