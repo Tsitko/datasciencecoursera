@@ -58,7 +58,7 @@ depSim<-function(dep1,dep2){
   counter<-0
   res<-0
   for (i in 3:(length(dep1))){
-    if(dep1[i]!="2"){
+    if(dep1[i]!="2" & dep2[i]!="2"){
     votes=votes+1;
     if(dep1[i]==dep2[i]){
       counter=counter+1
