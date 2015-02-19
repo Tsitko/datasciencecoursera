@@ -70,3 +70,29 @@ depSim<-function(dep1,dep2){
   }
   res
 }
+plotSim<-function(AvDep,data)
+{
+  x<-c(0:20)
+  x<-x*5
+  y<-rep(0,20)
+  count<-0
+  for (k in (1:448))
+    {
+      dep<-getDep(k,data)
+      if (dep[2]!=AvDep[2])
+      {
+      try<-depSim(dep,AvDep)  
+      try<-try*100
+      for (i in (1:20))
+      {
+        if (try<x[i+1] & try>x[i])
+        {
+          y[i]<-y[i]+1
+        }
+      }
+      }
+  }
+  x<-(1:20)
+  x<-x*5
+  plot(x,y,xlab="% of similarity",ylab="number of senators")
+}
