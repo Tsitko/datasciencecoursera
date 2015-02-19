@@ -41,6 +41,7 @@ The functions are:
 * avgDeputat(FractionName,data)
 * getDep(id,data)
 * depSim(deputat1,deputat2)
+*plotSim(AvDep,data)
 
 ##isInFract
 
@@ -85,3 +86,29 @@ Information about voting of the deputat1 and deputat2
 
 Output: 
 The similarity of Deputats (proportion of similar votes)
+
+## plotSim
+
+Input: 
+Average deputat for some fraction, data from VoteRes.txt
+
+Output: 
+Ploting the similarity of deputats and fraction:
+Numbers of similar deputats (who are not in given fraction) by % of similarity
+
+#EDRO.jpg
+
+Numbers of similar deputats by % of similarity for EDRO fraction
+
+#KPRF.jpg
+
+Numbers of similar deputats by % of similarity for KPRF fraction
+
+#LDPR.jpg
+
+Numbers of similar deputats by % of similarity for LDPR fraction
+
+#SR.jpg
+
+Numbers of similar deputats by % of similarity for SR fraction
+
