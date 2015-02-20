@@ -15,4 +15,3 @@ Output examples:
 * BID.csv
 * ASK.csv
 
-# Market depth generator
