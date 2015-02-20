@@ -14,4 +14,6 @@ Output examples:
 * Quotes.csv
 * BID.csv
 * ASK.csv
-
+* QuotesVol.csv
+* BIDVol.csv
+* ASKVol.csv
