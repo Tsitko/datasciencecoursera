@@ -11,7 +11,7 @@ Script:
 * polynom.R
 
 function bestPolynom(x,y,minN=0,maxN=10):
-
+_______________________________________________
 Input:
 
 * x - points
@@ -60,7 +60,7 @@ the integral of this polynom from 0 to 50 (the radius of the circle) is equals t
 
 
 function plotPolynom(x,y,Coef):
-
+___________________________________________________________________
 plotting the initial data an the best interpolation polynomial
 
 Input:
