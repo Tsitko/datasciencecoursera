@@ -10,6 +10,7 @@ Make an interpolation for given sets (x and y, where y=f(x)) by polynom
 Script:
 * polynom.R
 _______________________________________________
+
 function bestPolynom(x,y,minN=0,maxN=10):
 
 Input:
@@ -58,6 +59,7 @@ the integral of this polynom from 0 to 50 (the radius of the circle) is equals t
 2500*pi/4=1963.5 (the area of the quarter of circle with radius 50)
 
 ___________________________________________________________________
+
 
 function plotPolynom(x,y,Coef):
 
