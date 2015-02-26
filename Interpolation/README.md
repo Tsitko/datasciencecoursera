@@ -9,9 +9,9 @@ Make an interpolation for given sets (x and y, where y=f(x)) by polynom
 
 Script:
 * polynom.R
-
-function bestPolynom(x,y,minN=0,maxN=10):
 _______________________________________________
+function bestPolynom(x,y,minN=0,maxN=10):
+
 Input:
 
 * x - points
@@ -57,10 +57,10 @@ That means that the best interpolation is the polynom of 6th degree with given c
 the integral of this polynom from 0 to 50 (the radius of the circle) is equals to 1967.817 that is pretty close to
 2500*pi/4=1963.5 (the area of the quarter of circle with radius 50)
 
-
+___________________________________________________________________
 
 function plotPolynom(x,y,Coef):
-___________________________________________________________________
+
 plotting the initial data an the best interpolation polynomial
 
 Input:
