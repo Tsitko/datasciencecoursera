@@ -105,15 +105,16 @@ bestPolynom<-function(x,y,minN=0,maxN=10)
 plotPolynom<-function(x,y,Coef)
 {
   n<-length(Coef)
+  polyx<-sort(runif(1000,min(x),max(x)))
   if (n>1)
   {
-  poly<-makeX(x,n-1)%*%Coef
+  poly<-makeX(polyx,n-1)%*%Coef
   }
   else
   {
-    poly<-Coef
+    poly<-rep(Coef,1000)
   }
   plot(x,y,xlab="",ylab="")
   par(new=T)
-  plot(x,poly,xlab="",ylab="",type="l")
+  plot(polyx,poly,xlab="",ylab="",type="l")
 }
