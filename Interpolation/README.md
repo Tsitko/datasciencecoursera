@@ -24,15 +24,16 @@ Output:
 The coefficients for the interpolation polynomial that gives the best interpolation
 
 Example:
-> x<-0:50 #(51 points from 0 to 50)
+> x<-0:50      #(51 points from 0 to 50)
 
-> y<-rep(0,51) #(zero vector of the same length as x)
+> y<-rep(0,51)      #(zero vector of the same length as x)
 
-> for (i in 1:51){y[i]<-sqrt(2500-(x[i]^2))} #(the circle of radius 50 on [0,50], where y>0.)
+> for (i in 1:51){y[i]<-sqrt(2500-(x[i]^2))}      #(the circle of radius 50 on [0,50], where y>0.)
 
 >source("polynom.R")
 
 >bestPolynom(x,y)
+
 
      Coefficients
 X^6 -8.661587e-10
