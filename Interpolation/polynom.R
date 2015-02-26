@@ -101,3 +101,19 @@ bestPolynom<-function(x,y,minN=0,maxN=10)
     stop("Can't find any polynom")
   }
 }
+#plotting the initial data an the best interpolation polynomial
+plotPolynom<-function(x,y,Coef)
+{
+  n<-length(Coef)
+  if (n>1)
+  {
+  poly<-makeX(x,n-1)%*%Coef
+  }
+  else
+  {
+    poly<-Coef
+  }
+  plot(x,y,xlab="",ylab="")
+  par(new=T)
+  plot(x,poly,xlab="",ylab="",type="l")
+}
