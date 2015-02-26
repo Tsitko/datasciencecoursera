@@ -34,14 +34,21 @@ Example:
 
 >bestPolynom(x,y)
 
-
+    Coefficients
 X^6 -8.661587e-10
+
 X^5  2.113728e-08
+
 X^4 -1.200492e-06
+
 X^3  7.598625e-07
+
 X^2 -1.000117e-02
+
 X^1  5.908482e-07
+
 X^0  5.000000e+01
+
 
 That means that the best interpolation is the polynom of 6th degree with given coefficients:
 
