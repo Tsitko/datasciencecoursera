@@ -35,7 +35,6 @@ Example:
 >bestPolynom(x,y)
 
 
-     Coefficients
 X^6 -8.661587e-10
 X^5  2.113728e-08
 X^4 -1.200492e-06
