@@ -9,6 +9,8 @@ Make an interpolation for given sets (x and y, where y=f(x)) by polynom
 
 Script:
 * polynom.R
+ 
+
 _______________________________________________
 
 function bestPolynom(x,y,minN=0,maxN=10):
