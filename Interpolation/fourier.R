@@ -1,10 +1,13 @@
 fourier<-function(x,a,b,a0)
 {
         n<-length(a)
-        res<-a0/2
-        for (i in 1:n)
+        res<-rep(a0/2,length(x))
+        for (j in 1:length(x))
         {
-              res<-res+a[i]*cos(i*x)+b[i]*sin(i*x)  
+                for (i in 1:n)
+                {
+                      res[j]<-res[j]+a[i]*cos(i*x[j])+b[i]*sin(i*x[j])  
+                }
         }
         res
 }
