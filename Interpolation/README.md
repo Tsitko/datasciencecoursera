@@ -65,7 +65,7 @@ ___________________________________________________________________
 
 function plotPolynom(x,y,Coef):
 
-plotting the initial data an the best interpolation polynomial
+plotting the initial data and the best interpolation polynomial
 
 Input:
 
@@ -76,3 +76,40 @@ Input:
 Output:
 
 Plotting initial data with points and the polynom with lines
+
+## Fourier
+Make an interpolation for given sets (x and y, where y=f(x)) by Fourier series
+
+Script:
+* fourier.R
+
+__________________________________________________________
+
+function bestFur(x,y,minN=1,maxN=10):
+
+Input:
+
+* x - points
+* y - f(points)
+* minN - the lowest n of the fourier decomposition checked (must be >1)
+* maxN - the higest n of the fourier decomposition checked
+
+Output:
+
+The coefficients for the fourier interpolation that gives the best interpolation
+
+_________________________________________________________
+
+function plotFur(x,y,Coef):
+
+plotting the initial data and the best fourier interpolation
+
+Input:
+
+* x - points
+* y - f(points)
+* Coef - Coefficients
+
+Output:
+
+Plotting initial data with points and the fourier interpolation with lines
