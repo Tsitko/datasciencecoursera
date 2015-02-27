@@ -63,9 +63,17 @@ Fur<-function(x,y,n=2)
         else
         {
                 rn<-rep("",length(Coef))
-                for (i in 1:length(Coef))
+                rn[1]<-"a0"
+                for (i in 2:length(Coef))
                 {
-                        rn[i]=paste0("X^",(length(Coef)-i))
+                        if (i%%2==0)
+                        {
+                                rn[i]=paste0("a",i/2)
+                        }
+                        else
+                        {
+                                rn[i]=paste0("b",i/2-0.5) 
+                        }
                 }
                 colnames(Coef)<-"Coefficients"
                 rownames(Coef)<-rn
