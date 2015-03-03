@@ -5,7 +5,7 @@
                  na.strings="?",colClasses=c("character",
                                              "character","numeric","numeric","numeric","numeric",
                                              "numeric","numeric","numeric"))
-  #substucting data
+  #subsetting data
   data<-data[which(data[,1]=="1/2/2007")[1]:tail(which(data[,1]=="2/2/2007"),1),]
   # adding Datetime column to data
   data$Date<-strptime(data$Date,format="%d/%m/%Y")
