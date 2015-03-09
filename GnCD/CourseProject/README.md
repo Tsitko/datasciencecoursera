@@ -14,4 +14,6 @@ run_nanlysis.R:
 
 ##Files
 
-* averages_data.txt
+averages_data.txt:
+
+The result of run_nanlysis.R
