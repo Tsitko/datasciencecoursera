@@ -3,7 +3,7 @@ A very simple recommender system
 #Content
 * Recom.R
 ##Recom.R
-Function recomend(data,uId=1)
+Function recommend(data,uId=1)
 
 * data - data.frame with 2 columns (user Ids and product Ids) representing which products were bought by which users.
 
