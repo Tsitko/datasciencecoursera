@@ -1,4 +1,4 @@
-recomend<-function(data,uId=1)
+recommend<-function(data,uId=1)
 {
         users<-split(data,data[,1])
         userProds<-users[uId][[1]][,2]
