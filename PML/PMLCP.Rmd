@@ -1,0 +1,145 @@
+---
+title: "PML course project"
+author: "Tsitko"
+date: "Monday, May 18, 2015"
+output: html_document
+---
+
+
+---
+Practical Machine Learning Course Project by Denis Tsitko (18.05.2015)
+---
+
+---
+Librarys
+---
+
+
+
+```{r}
+library(rpart)
+library(rpart.plot)
+library(randomForest)
+library(caret)
+library(corrplot)
+```
+
+
+---
+Downloading and reading data
+---
+
+
+```{r}
+if (!file.exists("train.csv")) {
+  download.file("https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv", destfile="train.csv")
+}
+if (!file.exists("test.csv")) {
+  download.file("https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv", destfile="test.csv")
+}
+
+train<-read.csv("train.csv")
+test<-read.csv("test.csv")
+```
+
+---
+Cleaning data
+---
+
+Lets look at the data dimentions:
+
+```{r echo=TRUE}
+dim(train)
+dim(test)
+```
+
+So there are 160 variables in each data set. And there is 19622 observations for training set and 20 oservations for test set.
+
+Lets leave only variables with all complete cases:
+
+```{r}
+train <- train[, colSums(is.na(train)) == 0] 
+test <- test[, colSums(is.na(test)) == 0] 
+class <- train$classe
+train2Rm <- grepl("^X|timestamp|window", names(train))
+train <- train[, !train2Rm]
+trainFin <- train[, sapply(train, is.numeric)]
+trainFin$classe <- class
+test2Rm <- grepl("^X|timestamp|window", names(test))
+test <- test[, !test2Rm]
+testFin <- test[, sapply(test, is.numeric)]
+```
+
+Lets look at the cleaned data dimentions:
+
+```{r echo=TRUE}
+dim(trainFin)
+dim(testFin)
+```
+
+So the nomber of observations are the same, but the number of variables for each set is now 53.
+
+---
+Creating preTrain and preTest sets
+---
+
+```{r}
+set.seed(123) 
+inTrain <- createDataPartition(trainFin$classe, p=0.60, list=F)
+preTrain <- trainFin[inTrain, ]
+preTest <- trainFin[-inTrain, ]
+```
+
+---
+Creating the model
+---
+
+Here we will use a simple randomForest model training (using train from caret with defaults) for our data.
+
+```{r echo=TRUE}
+set.seed(123)
+trC <- trainControl(method="cv", 3)
+md<-train(classe~.,data=preTrain, trControl=trC,ntree=200)
+md
+```
+
+Now we predicting for preTets set:
+
+```{r echo=TRUE}
+res <- predict(md, preTest)
+confusionMatrix(preTest$classe, res)
+```
+
+
+```{r echo=TRUE}
+accuracy <- postResample(res, preTest$classe)
+accuracy
+```
+
+So we have accuracy of about 99%.
+
+Lets now update our model with preTest data and make a prediction for our testFin data:
+
+```{r echo=TRUE}
+md<-update(md,data=preTest)
+prediction <- predict(md, testFin[, -length(testFin[1,])])
+prediction
+```
+
+---
+Plots
+---
+
+Lets plot correlation matrix:
+
+```{r echo=TRUE}
+corrMat <- cor(trainFin[, -length(trainFin[1,])])
+corrplot(corrMat, method="color")
+```
+
+Lets plot decision tree:
+
+```{r echo=TRUE}
+tree <- rpart(classe ~ ., data=trainFin, method="class")
+prp(tree) 
+```
